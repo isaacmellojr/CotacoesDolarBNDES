@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Globalization;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Cotacoes
 {
@@ -27,8 +24,8 @@ namespace Cotacoes
                     DateTime datac = new DateTime();
 
                     if (DateTime.TryParseExact(data, "dd/MM/yyyy"
-                        , System.Globalization.CultureInfo.InvariantCulture
-                        , System.Globalization.DateTimeStyles.None
+                        , CultureInfo.InvariantCulture
+                        , DateTimeStyles.None
                         , out datac))
                     {
                         if (processador.ExisteCotacaoParaData(datac.ToString("dd/MM/yyyy")))
